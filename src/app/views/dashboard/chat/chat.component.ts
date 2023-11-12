@@ -49,12 +49,13 @@ export class ChatComponent {
           'media': [],
         },
         {
-          'msg': 'Yeah you can ask please tell your issue.',
+          'msg': 'Yeah you can ask please tell your issue. ',
           'isYou': true,
           'time': '3:40 PM',
           'msgType': 0,
           'media': [],
         },
+
       ]
     },
     {
@@ -497,10 +498,10 @@ export class ChatComponent {
   check(i: any) {
     // *ngIf="i === 0; data[0].chats[i - 1].isYou
     if (i == 0) return true;
-    if (this.data[0].chats[i - 1].isYou == false) return false;
-    if (this.data[0].chats[i - 1].isYou == true) return false;
-
-    return true;
+    if (this.data[0].chats[i].isYou == false && this.data[0].chats[i - 1].isYou == true) {
+      return true
+    }
+    return false;
 
   }
   changeActive(i: any) {
